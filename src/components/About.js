@@ -1,5 +1,5 @@
 import img from "../assets/8.png";
-export default () => {
+export default function About() {
   return (
     <>
       <div className="bg-aboutimg bg-no-repeat bg-cover bg-center">
@@ -40,4 +40,4 @@ export default () => {
       </div>
     </>
   );
-};
+}
