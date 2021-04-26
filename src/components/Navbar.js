@@ -1,57 +1,91 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import Burger from "./Burger";
+
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function () {
+    var context = this,
+      args = arguments;
+    var later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
 
 export default function Navbar() {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset;
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 70) ||
+        currentScrollPos < 100
+    );
+    setPrevScrollPos(currentScrollPos);
+  }, 100);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
+
   return (
     <>
-      <Burger />
-      <nav className="border-b-2 border-gray-300 w-full z-10 flex flex-wrap items-center justify-between px-2 navbar-expand-lg">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <Link
-              className="font-logo text-6xl -mt-2 leading-relaxed inline-block whitespace-no-wrap"
-              to="/"
-            >
-              Burenta
-            </Link>
-            <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-            >
-              <FontAwesomeIcon icon={faShoppingBag} />
-            </button>
-          </div>
-          <div className="lg:flex flex-grow items-center">
-            <ul className="flex flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <Link
-                  to="/about"
-                  className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug hover:opacity-75"
-                >
-                  About
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/products"
-                  className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug hover:opacity-75"
-                >
-                  Products
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  to="/contact"
-                  className="px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug hover:opacity-75"
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+      <nav
+        className={
+          "bg-white w-full flex flex-col lg:flex-row flex-wrap items-center content-center justify-around z-10 fixed transform ease-linear duration-200 " +
+          (visible ? "translate-y-0" : "-translate-y-44")
+        }
+      >
+        <Link className="font-logo text-black text-9xl mt-4" to="/">
+          Burenta
+        </Link>
+        <div className="lg:flex -mt-6 mb-3 lg:m-0 items-center">
+          <ul className="flex flex-row list-none lg:ml-auto">
+            <li className="nav-item">
+              <Link
+                to="/about"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-gray-400 border-r-2 border-opacity-40 hover:opacity-75"
+              >
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a
+                href="/#products"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-gray-400 border-r-2 border-opacity-40 hover:opacity-75"
+              >
+                Products
+              </a>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/contact"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug hover:opacity-75"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="search relative lg:order-first mb-3 lg:mt-14">
+          <input
+            type="search"
+            placeholder="Search . . ."
+            className="border border-black rounded-full py-2 pl-8 pr-2 bg-gray-300 bg-opacity-40 focus:bg-opacity-5 focus:outline-none"
+          />
+          <button className="absolute top-1/4 left-2 focus:outline-none">
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
         </div>
       </nav>
     </>

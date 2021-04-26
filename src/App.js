@@ -1,7 +1,10 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,12 +13,16 @@ function App() {
         <div className="">
           <Navbar />
         </div>
-        <div className="main-content mb-auto">
+        <div className="main-content mb-auto pt-32">
           <Switch>
-            <Route path="/" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
           </Switch>
         </div>
-        <div className="footer"></div>
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     </Router>
   );
