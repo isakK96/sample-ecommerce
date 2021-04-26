@@ -73,11 +73,17 @@ export function MainSlider() {
       <SwiperSlide>
         <div className="h-screen relative bg-heroimage2 bg-cover bg-no-repeat bg-bottom mb-12">
           <div className="h-screen bg-cover bg-black bg-opacity-30">
-            <div className="pt-48">
+            <div className="pt-5">
               <h1 className="text-gray-200 font-heading font-bold text-6xl pt-20 pl-2 lg:pl-40 lg:pt-40 lg:text-7xl">
                 All <span className="text-green-300">natural</span> and
                 <span className="text-blue-200"> cruelty free</span> products.
               </h1>
+              <p className="text-white pl-2 pt-2 mr-3 font-semibold lg:pl-40 lg:w-1/3 lg:text-2xl">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
+                explicabo illum natus placeat dignissimos quidem aperiam
+                repellat vitae quos est blanditiis, magni officia. Porro sint
+                accusantium nihil, impedit deserunt provident?
+              </p>
               <a href="/#products">
                 <button
                   className="ml-4 text-white uppercase border bg-opacity-30 rounded-full border-opacity-40 lg:float-none
