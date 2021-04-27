@@ -112,10 +112,14 @@ export const INGREDIENTS = {
         Passiflora Incarnata (Passionflower) Flower Extract, Rosmarinus
         Officinalis (Rosemary) Leaf Powder*, Aloe Barbadensis Leaf Powder,
         Tocopherol (Vitamin E).
-        <p className="mt-4 text-sm">
+        <br />
+        <span className="mt-4 text-sm">
           *Organic Ingredients. Ingrédients Organiques.
-        </p>
-        <p className="mt-4 text-sm">This product is certified Gluten-free.</p>
+        </span>
+        <br />
+        <span className="mt-4 text-sm">
+          This product is certified Gluten-free.
+        </span>
       </p>
     </div>
   ),
@@ -172,7 +176,7 @@ export const INGREDIENTS = {
         Extract,Ascorbyl Palmitate, Lavender Bulgaria Oil*, Sclerocarya Birrea
         Seed Oil (Marula Oil), Coffea Arabica Leaf/Seed Extract, Citrus Limon
         (Lemon) Peel Powder. May Contain: Iron Oxides, Titanium Dioxide
-        <p className="mt-4 text-sm">*Certified Organic</p>
+        <span className="mt-4 text-sm">*Certified Organic</span>
       </p>
     </div>
   ),

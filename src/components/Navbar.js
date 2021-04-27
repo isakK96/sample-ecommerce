@@ -46,15 +46,15 @@ export default function Navbar() {
           (visible ? "translate-y-0" : "-translate-y-56 lg:-translate-y-44")
         }
       >
-        <Link className="font-logo text-black text-9xl mt-4" to="/">
+        <Link className="text-black text-6xl" to="/">
           Burenta
         </Link>
-        <div className="lg:flex -mt-6 mb-3 lg:m-0 items-center">
-          <ul className="flex flex-row list-none lg:ml-auto">
+        <div className="lg:flex mb-3 lg:m-0 items-center">
+          <ul className="flex flex-row list-none ">
             <li className="nav-item">
               <Link
                 to="/about"
-                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-gray-400 border-r-2 border-opacity-40 hover:opacity-75"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-black border-r-2 border-opacity-40 hover:bg-opacity-5 hover:bg-black"
               >
                 About
               </Link>
@@ -62,7 +62,7 @@ export default function Navbar() {
             <li className="nav-item">
               <a
                 href="/#products"
-                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-gray-400 border-r-2 border-opacity-40 hover:opacity-75"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug border-black border-r-2 border-opacity-40 hover:bg-opacity-5 hover:bg-black"
               >
                 Products
               </a>
@@ -70,14 +70,14 @@ export default function Navbar() {
             <li className="nav-item">
               <Link
                 to="/contact"
-                className="px-3 py-1 flex items-center text-lg uppercase leading-snug hover:opacity-75"
+                className="px-3 py-1 flex items-center text-lg uppercase leading-snug hover:bg-opacity-5 hover:bg-black"
               >
                 Contact
               </Link>
             </li>
           </ul>
         </div>
-        <div className="search relative lg:order-first mb-3 lg:mt-14">
+        <div className="search relative lg:order-first">
           <input
             type="search"
             placeholder="Search . . ."

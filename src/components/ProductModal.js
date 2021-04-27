@@ -15,9 +15,9 @@ function ProductDetails(props) {
             <div className="w-full flex flex-col lg:pr-8">
               <InnerImageZoom
                 src={props.imgUrl}
-                zoomScale={4}
+                zoomScale={10}
                 zoomType="hover"
-                className=""
+                className="lg:w-72"
               />
               <h1 className="text-center text-gray-900 text-2xl title-font font-medium mb-1">
                 {props.product}

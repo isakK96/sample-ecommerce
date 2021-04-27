@@ -75,8 +75,8 @@ export function MainSlider() {
           <div className="h-screen bg-cover bg-black bg-opacity-30">
             <div className="pt-5">
               <h1 className="text-gray-200 font-heading font-bold text-6xl pt-20 pl-2 lg:pl-40 lg:pt-40 lg:text-7xl">
-                All <span className="text-green-300">natural</span> and
-                <span className="text-blue-200"> cruelty free</span> products.
+                All <span className="text-green-600">natural</span> and
+                <span className="text-blue-100"> cruelty free</span> products.
               </h1>
               <p className="text-white pl-2 pt-2 mr-3 font-semibold lg:pl-40 lg:w-1/3 lg:text-2xl">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
