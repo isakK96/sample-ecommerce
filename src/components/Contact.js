@@ -1,4 +1,4 @@
-export default () => {
+export default function Contact() {
   return (
     <div className="text-gray-600 body-font relative">
       <div className="container px-5 py-24 mx-auto">
@@ -72,4 +72,4 @@ export default () => {
       </div>
     </div>
   );
-};
+}

@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="text-gray-600 body-font bg-sand flex">
       <div className="container px-5 py-8 flex flex-row">
-        <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+        <p className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <span className="ml-3 text-xl pr-12">Burenta</span>
-        </a>
+        </p>
         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4"></p>
         <div className="px-4">
           <h2 className="title-font font-medium border-b border-black text-gray-900 tracking-widest text-sm mb-3">

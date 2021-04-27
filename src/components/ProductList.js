@@ -7,7 +7,7 @@ import nailpolish from "../assets/products/nailpolish.png";
 import ProductCard from "./ProductCard";
 import { DESCRIPTIONS, INGREDIENTS } from "./ProductInformation";
 
-export default () => {
+export default function ProductList() {
   return (
     <>
       <h3
@@ -62,4 +62,4 @@ export default () => {
       </div>
     </>
   );
-};
+}

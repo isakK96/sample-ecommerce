@@ -43,7 +43,7 @@ export default function Navbar() {
       <nav
         className={
           "bg-white w-full flex flex-col lg:flex-row flex-wrap items-center content-center justify-around z-10 fixed transform ease-linear duration-200 " +
-          (visible ? "translate-y-0" : "-translate-y-44")
+          (visible ? "translate-y-0" : "-translate-y-56 lg:-translate-y-44")
         }
       >
         <Link className="font-logo text-black text-9xl mt-4" to="/">

@@ -31,11 +31,7 @@ export default function About() {
               wear no evil.
             </p>
           </div>
-          <img
-            src={img}
-            alt="image"
-            className="max-w-xs mx-auto mt-4 lg:mt-0"
-          />
+          <img src={img} alt="" className="max-w-xs mx-auto mt-4 lg:mt-0" />
         </div>
       </div>
     </>
